@@ -97,6 +97,33 @@
       color:var(--accent);font-family:Arial,sans-serif;font-size:.86rem;text-decoration:none;
       border-bottom:1px solid var(--accent)
     }
+    .guide-controls{margin-top:22px}
+    .control-label{
+      margin:14px 0 7px;color:var(--muted);font-family:Arial,sans-serif;font-size:.78rem;
+      text-transform:uppercase;letter-spacing:.08em
+    }
+    .control-row{display:flex;flex-wrap:wrap;gap:8px}
+    .control-btn{
+      appearance:none;border:1px solid var(--line);border-radius:999px;padding:8px 12px;
+      background:#fff;color:var(--ink);font-family:Arial,sans-serif;font-size:.84rem;cursor:pointer
+    }
+    .control-btn:hover{border-color:var(--accent)}
+    .control-btn.active{background:var(--accent2);border-color:var(--accent2);color:#fff}
+    .filter-status{margin:13px 0 0;color:var(--muted);font-family:Arial,sans-serif;font-size:.84rem}
+    .restaurant[hidden],section[hidden]{display:none}
+    .menu-sample{
+      border-top:1px solid var(--line);margin-top:17px;padding-top:14px
+    }
+    .menu-sample summary{
+      cursor:pointer;color:var(--accent);font-family:Arial,sans-serif;font-size:.9rem;font-weight:700
+    }
+    .menu-sample summary:hover{color:var(--accent2)}
+    .menu-sample ul{margin:10px 0 8px;padding-left:20px}
+    .menu-sample .wine-note{margin:9px 0}
+    .menu-source{
+      color:var(--accent);font-family:Arial,sans-serif;font-size:.86rem;text-decoration:none;
+      border-bottom:1px solid var(--accent)
+    }
     .photos{
       border-top:1px solid var(--line);margin-top:17px;padding-top:14px
     }
@@ -150,8 +177,8 @@
 <nav>
   <div class="wrap">
     <a href="#profile">Your Taste</a>
-    <a href="#bordeaux">Bordeaux</a>
-    <a href="#strasbourg">Strasbourg</a>
+    <a href="#bordeaux" data-city-nav="bordeaux">Bordeaux</a>
+    <a href="#strasbourg" data-city-nav="strasbourg">Strasbourg</a>
     <a href="#anchors">Meal Anchors</a>
   </div>
 </nav>
@@ -163,14 +190,21 @@
       <div class="city-kicker">Selection philosophy</div>
       <h2>Your Restaurant Filter</h2>
       <p>The guide favors restaurants with excellent cooking, a distinctive point of view, genuine character, and prices that still feel rational. Regional identity and a strong sense of place matter, but traditional and modern restaurants are judged on equal terms. Creativity is welcome when it makes the meal better; novelty, fusion, or trendiness earns no automatic bonus.</p>
-      <div class="taste">
-        <span class="tag">Excellent cooking</span>
-        <span class="tag">Distinctive point of view</span>
-        <span class="tag">Regional identity</span>
-        <span class="tag">Characterful atmosphere</span>
-        <span class="tag">Reasonable prices</span>
-        <span class="tag">Traditional or modern</span>
-        <span class="tag">Creativity judged by results</span>
+      <div class="guide-controls">
+        <div class="control-label">Choose a city</div>
+        <div class="control-row" role="tablist" aria-label="City">
+          <button type="button" class="control-btn city-filter active" data-city="bordeaux" aria-selected="true">Bordeaux · 9</button>
+          <button type="button" class="control-btn city-filter" data-city="strasbourg" aria-selected="false">Strasbourg · 9</button>
+        </div>
+        <div class="control-label">Show restaurants</div>
+        <div class="control-row" aria-label="Restaurant filters">
+          <button type="button" class="control-btn restaurant-filter active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="control-btn restaurant-filter" data-filter="traditional" aria-pressed="false">Regional &amp; traditional</button>
+          <button type="button" class="control-btn restaurant-filter" data-filter="modern" aria-pressed="false">Modern</button>
+          <button type="button" class="control-btn restaurant-filter" data-filter="value" aria-pressed="false">Best value</button>
+          <button type="button" class="control-btn restaurant-filter" data-filter="atmosphere" aria-pressed="false">Great atmosphere</button>
+        </div>
+        <p class="filter-status" aria-live="polite">Showing Bordeaux · All restaurants</p>
       </div>
     </div>
     <div class="panel hotel">
@@ -190,12 +224,25 @@
     <p>Best for hearty Southwestern cooking, classic Bordeaux brasseries, duck, beef, charcuterie, seasonal produce and serious wine without needing a tasting-menu spectacle.</p>
 
     <div class="restaurant-grid">
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#1 — Strongest taste match</div>
         <h3>La Tupina</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€</span><span class="pill">Traditional Southwest</span></div>
+        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€ · Est. €160–€220 for two</span><span class="pill">Traditional Southwest</span></div>
         <p>A Bordeaux institution rooted in Gascony and Guyenne, with rustic country-auberge character and hearth cooking. Think duck-fat potatoes, meats, charcuterie and deep Southwest identity.</p>
         <p class="why">Why it fits: regional authenticity is the whole point.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Country terrine or seasonal starter</li>
+            <li>White asparagus when in season</li>
+            <li>Fire-grilled entrecôte or rib steak</li>
+            <li>Duck-fat potatoes</li>
+            <li>Seasonal house dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Large Bordeaux-focused list; entry bottles reported around €35, plus an extensive Armagnac selection.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/la-tupina-r184">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -221,12 +268,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Tupina+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#2 — Classic elegance</div>
         <h3>Le Noailles</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€€</span><span class="pill">~10 min from hotel</span></div>
+        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€€ · Est. €135–€185 for two</span><span class="pill">~10 min from hotel</span></div>
         <p>Old Bordeaux brasserie character with classic dishes such as oysters, sole, liver, duck, tournedos and cèpes. More polished than rustic, but still traditional in spirit.</p>
         <p class="why">Why it fits: elegant without turning dinner into performance art.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Grenier médocain</li>
+            <li>Oysters and seasonal seafood</li>
+            <li>Duck confit</li>
+            <li>300g grilled entrecôte with Bordelaise sauce</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Extensive Bordeaux list, with approachable bottles commonly available around €30–€40; Crémant de Bordeaux listed from €39.50.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.lenoailles.fr/en/la-carte/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -248,12 +307,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Noailles+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#3 — Hearty Bordeaux night</div>
         <h3>Brasserie Bordelaise</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€</span><span class="pill">Southwest classics</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €110–€150 for two</span><span class="pill">Southwest classics</span></div>
         <p>Lively, generous, meat-and-wine-oriented Bordeaux dining. A good place for charcuterie, duck, beef, Bordelaise flavors and a broad regional wine list.</p>
         <p class="why">Why it fits: robust food with very little pretense.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Charcuterie or onion soup</li>
+            <li>Stuffed cabbage or seasonal Southwest starter</li>
+            <li>Bazas beef, duck or braised meat</li>
+            <li>House potatoes and regional sides</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Broad Bordeaux and Southwest list, designed for meat-heavy regional dishes; many choices by the glass and bottle.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d1441168-Reviews-La_Brasserie_Bordelaise-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -279,12 +350,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Brasserie+Bordelaise+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern atmosphere">
         <div class="rank">#4 — Atmosphere wildcard</div>
         <h3>Le Chapon Fin</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€€€</span><span class="pill">Historic dining room</span></div>
+        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€€€ · Est. €220–€320 for two</span><span class="pill">Historic dining room</span></div>
         <p>A grand historic Bordeaux restaurant with one of the city's most distinctive interiors. Price is the weak point, but the room scores very highly for uniqueness and old-world atmosphere.</p>
         <p class="why">Best use: consider lunch rather than a full splurge dinner.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Seasonal gastronomic tasting menu</li>
+            <li>Fish or shellfish course</li>
+            <li>Refined meat course</li>
+            <li>Composed dessert and petits fours</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Serious fine-dining cellar with Bordeaux as a strength; wine pairings and premium bottles can move the total well above this estimate.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.chapon-fin.com/en/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -310,12 +393,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Chapon+Fin+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value">
         <div class="rank">#5 — Casual backup</div>
         <h3>Bistrot Maurice</h3>
-        <div class="meta"><span class="pill stars">★★★½</span><span class="pill">€€</span><span class="pill">Casual bistro</span></div>
+        <div class="meta"><span class="pill stars">★★★½</span><span class="pill">€€ · Est. €95–€125 for two</span><span class="pill">Casual bistro</span></div>
         <p>A relaxed bistro choice when you want good French food without making the evening revolve around the restaurant. Slightly more modern in approach, but still grounded enough to remain useful.</p>
         <p class="why">Best use: spontaneous lunch or low-key dinner.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Seasonal vegetable or house-charcuterie starter</li>
+            <li>Revisited bistro dish using local produce</li>
+            <li>Fresh fish or carefully sourced meat</li>
+            <li>Chocolate mousse or seasonal dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Compact selection emphasizing well-made local, organic and natural wines, with discoveries from elsewhere in France.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.bistrotmaurice.com/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -342,12 +437,24 @@
       </article>
 
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value">
         <div class="rank">#6 — Best modern bistro addition</div>
         <h3>Sens</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€</span><span class="pill">Modern French bistro</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €120–€160 for two</span><span class="pill">Modern French bistro</span></div>
         <p>Chef Alexandre Bru gives recognizable French bistro cooking a precise contemporary treatment, with sourced ingredients, lucid flavors and menus that remain sensibly priced.</p>
         <p class="why">Why it fits: modern and creative, but flavor and execution remain the point.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Seasonal market starter</li>
+            <li>Modern treatment of a nostalgic bistro dish</li>
+            <li>Fish or carefully sourced meat with composed sauce</li>
+            <li>Chef's seasonal dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Eclectic French list assembled to support the market menu; lunch is materially less expensive than dinner.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://guide.michelin.com/us/en/nouvelle-aquitaine/bordeaux/restaurant/sens-1198521">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -373,12 +480,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sens+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value atmosphere">
         <div class="rank">#7 — Chic brasserie and value</div>
         <h3>Madame B</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€</span><span class="pill">2026 Bib Gourmand</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €105–€145 for two</span><span class="pill">2026 Bib Gourmand</span></div>
         <p>A polished, retro-leaning hotel brasserie where nostalgic dishes such as confit pork, venison in red wine and stuffed cabbage receive contemporary touches and particularly careful sauces.</p>
         <p class="why">Why it fits: elegance, comfort and Michelin-recognized value in the same room.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Confit pork belly</li>
+            <li>Venison stewed in red wine</li>
+            <li>Stuffed cabbage with contemporary garnish</li>
+            <li>Chestnut soufflé or seasonal pastry</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Hotel-brasserie list with Bordeaux and wider French coverage; cocktails are also a meaningful part of the program.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.restaurantmadameb.com/en/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -404,12 +523,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Madame+B+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern atmosphere">
         <div class="rank">#8 — Local, modern and casual</div>
         <h3>OST</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€</span><span class="pill">Local · Modern</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €110–€150 for two</span><span class="pill">Local · Modern</span></div>
         <p>A relaxed stone-vaulted bistro combining seasonal French ingredients with confidently modern ideas. The format is flexible, the room is understated and the cooking remains generous.</p>
         <p class="why">Why it fits: creative cooking in a sober, convivial setting rather than a theatrical one.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Sea bream or tuna carpaccio</li>
+            <li>Seasonal vegetable starter</li>
+            <li>Fish or meat designed for sharing</li>
+            <li>Chocolate, olive and salted-caramel cookie</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Modern bistro list with local and French bottles selected for a menu that sometimes uses Asian and Mediterranean accents.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.ostbordeaux.com/en/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -435,12 +566,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=OST+Bordeaux">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value">
         <div class="rank">#9 — Creative wildcard</div>
         <h3>Racines by Daniel Gallacher</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€</span><span class="pill">Bib Gourmand</span></div>
+        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Bib Gourmand</span></div>
         <p>A self-taught Scottish chef changes the market menu every week, producing inventive, meticulously prepared dishes that may roam beyond France while retaining a strong bistro structure.</p>
         <p class="why">Why it fits: it earns attention through execution and value, not because unconventional combinations are automatically better.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Weekly market-driven starter</li>
+            <li>Inventive fish or vegetable plate</li>
+            <li>Seasonal meat course</li>
+            <li>Two changing desserts</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Short, thoughtful list matching the frequently changing menu; lunch is one of the strongest value options in Bordeaux.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://racines-bordeaux.com/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -469,19 +612,32 @@
   </div>
 </section>
 
-<section id="strasbourg">
+<section id="strasbourg" hidden>
   <div class="wrap">
     <div class="city-kicker">Alsace</div>
     <h2>Strasbourg</h2>
     <p>This is where your preferences really shine. The traditional winstub offers exactly the combination you value: local cooking, local wine, wood-paneled charm and sensible pricing.</p>
 
     <div class="restaurant-grid">
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#1 — Top Strasbourg choice</div>
         <h3>Au Pont Corbeau</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€</span><span class="pill">Traditional winstub</span></div>
+        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Traditional winstub</span></div>
         <p>Traditional Alsatian dishes, a wood-paneled room and a strong local wine identity. A serious choice for regional food rather than a tourist-theme version of Alsace.</p>
         <p class="why">Why it fits: indigenous, atmospheric and unashamedly traditional.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Dandelion salad or foie gras</li>
+            <li>Boudin or tête de veau</li>
+            <li>Onglet with pan-fried potatoes</li>
+            <li>Choucroute and changing Alsatian specials</li>
+            <li>Fromage blanc tart</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Celebrated Alsatian and French cellar, with wine by the glass, carafe and bottle; ask the house for a pairing recommendation.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.aupontcorbeau.fr/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -507,12 +663,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Au+Pont+Corbeau+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#2 — Historic institution</div>
         <h3>Chez Yvonne</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€</span><span class="pill">Historic winstub</span></div>
+        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€ · Est. €100–€140 for two</span><span class="pill">Historic winstub</span></div>
         <p>A classic Strasbourg institution with the kind of intimate, wood-paneled setting that makes the meal feel inseparable from the city itself.</p>
         <p class="why">Why it fits: strong history + charm + recognizable Alsatian food.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Alsatian snails or foie gras</li>
+            <li>Choucroute garnie</li>
+            <li>Baeckeoffe or poultry in Riesling sauce</li>
+            <li>Kougelhopf glacé or seasonal tart</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Wide Alsatian selection with Riesling, Pinot Gris and Pinot Noir; staff wine recommendations receive frequent praise.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.restaurant-chez-yvonne.net/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -538,12 +706,25 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chez+Yvonne+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#3 — Value winner</div>
         <h3>Winstub Le Zehnerglock</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€</span><span class="pill">Rustic Alsatian</span></div>
+        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Rustic Alsatian</span></div>
         <p>Family-run, rustic and traditional, with generous portions and approachable prices. The little old-fashioned details are part of the appeal.</p>
         <p class="why">Why it fits: possibly the best food + atmosphere + value combination.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Cervelas and Gruyère salad</li>
+            <li>Escargots or seasonal starter</li>
+            <li>Choucroute garnie</li>
+            <li>Pork knuckle, spaetzle or daily special</li>
+            <li>Alsatian fruit tart</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Approachable regional list focused on Alsatian producers, alongside beer and traditional eaux-de-vie.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.zehnerglock.fr/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -569,12 +750,25 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Winstub+Le+Zehnerglock+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#4 — Charming evening</div>
         <h3>L'Oignon</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€</span><span class="pill">Petite France</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Petite France</span></div>
         <p>Stone walls, exposed beams and a cozy setting. French and Alsatian comfort dishes with enough refinement to feel special without drifting into innovation-for-innovation's-sake.</p>
         <p class="why">Best use: charming, romantic dinner in the old city.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Onion soup or escargots</li>
+            <li>Choucroute garnie</li>
+            <li>Beer-and-honey braised ham</li>
+            <li>Meat specialty or seasonal regional plate</li>
+            <li>Strudel or fruit dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Compact, accessible Alsatian list; reviewers often describe the overall food-and-wine value as fair.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://www.restaurantloignon.fr/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -600,12 +794,25 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=L%27Oignon+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#5 — Reliable traditional backup</div>
         <h3>Le Tire-Bouchon</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€</span><span class="pill">Central Strasbourg</span></div>
+        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Central Strasbourg</span></div>
         <p>A classic central winstub with approachable pricing and traditional Alsatian dishes. Useful if the first-choice winstubs are booked.</p>
         <p class="why">Best use: dependable fallback that still feels local.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Foie gras or regional salad</li>
+            <li>Choucroute garnie</li>
+            <li>Cordon bleu or pork knuckle</li>
+            <li>Munster-based specialty</li>
+            <li>Traditional Alsatian dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Regional Alsatian wines, beer and digestifs in a classic winstub format; pricing is moderate for the cathedral area.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://fr.gaultmillau.com/en/restaurants/winstub-le-tire-bouchon">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -632,12 +839,24 @@
       </article>
 
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#6 — Best atmosphere addition</div>
         <h3>Brasserie des Haras</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€€</span><span class="pill">Historic former stables</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€€ · Est. €140–€190 for two</span><span class="pill">Historic former stables</span></div>
         <p>A grand but welcoming brasserie inside Strasbourg's former royal stud farm, combining historic stone and timber with dramatic contemporary design and polished French cooking.</p>
         <p class="why">Why it fits: one of the city's most memorable rooms, with food substantial enough to justify the setting.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Seasonal brasserie starter</li>
+            <li>Reimagined Alsatian or French main</li>
+            <li>Fish, poultry or house meat dish</li>
+            <li>Polished pastry or dessert assortment</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Substantial brasserie cellar and cocktail program; the spectacular setting contributes to prices above most Strasbourg winstubs.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://les-haras-brasserie.com/?lng=en">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -663,12 +882,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Brasserie+des+Haras+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value atmosphere">
         <div class="rank">#7 — Best modern Strasbourg addition</div>
         <h3>Honesty</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€</span><span class="pill">Seasonal modern French</span></div>
+        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €125–€165 for two</span><span class="pill">Seasonal modern French</span></div>
         <p>Chef Tiffany Schwoob serves precise, delicate seasonal cooking in a tiny, softly lit dining room. The menus are original but remain focused on balance, careful seasoning and the character of the ingredients.</p>
         <p class="why">Why it fits: a genuinely modern restaurant whose creativity is validated by the results.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Monthly-changing seasonal starter</li>
+            <li>Choice of fish, meat or vegetarian main</li>
+            <li>Two- or three-course dinner format</li>
+            <li>Small intermediate courses may be included</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Concise list emphasizing organic and natural producers from Alsace and elsewhere in France.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://fr.gaultmillau.com/en/restaurants/honesty">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -694,12 +925,24 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honesty+Restaurant+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="modern value">
         <div class="rank">#8 — Modern and approachable</div>
         <h3>Le Banquet des Sophistes</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€</span><span class="pill">Modern bistronomy</span></div>
+        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Modern bistronomy</span></div>
         <p>A convivial modern bistro with a frequently changing market menu, carefully worked plates and eclectic influences used with restraint rather than as a sales pitch.</p>
         <p class="why">Why it fits: one of the clearest ways to explore contemporary Strasbourg cooking at a moderate price.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Weekly market-driven starter</li>
+            <li>Modern fish or seasonal vegetable plate</li>
+            <li>Meat course with contemporary garnish</li>
+            <li>Changing bistronomic dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Thoughtful French list intended for the changing menu, with accessible bottles and by-the-glass options.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://le-banquet.com/concept/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -725,12 +968,25 @@
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Banquet+des+Sophistes+Strasbourg">Open in Maps ↗</a>
       </article>
 
-      <article class="restaurant">
+      <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#9 — Neighborhood winstub</div>
         <h3>Fink'Stuebel</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€</span><span class="pill">Traditional Alsatian</span></div>
+        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €85–€120 for two</span><span class="pill">Traditional Alsatian</span></div>
         <p>A rustic neighborhood winstub in Finkwiller serving emblematic Alsatian dishes in a small, characterful room away from the most concentrated tourist traffic.</p>
         <p class="why">Why it fits: another authentic local option, but with more neighborhood intimacy than the central institutions.</p>
+        <details class="menu-sample">
+          <summary>Sample menu &amp; wine</summary>
+          <p class="small"><strong>Representative dishes:</strong> menus and prices can change seasonally.</p>
+          <ul>
+            <li>Regional charcuterie or salad</li>
+            <li>Choucroute garnie</li>
+            <li>Baeckeoffe or pork specialty</li>
+            <li>Spaetzle and seasonal accompaniments</li>
+            <li>Traditional Alsatian dessert</li>
+          </ul>
+          <p class="wine-note"><strong>Wine &amp; drinks:</strong> Clear regional selection with Alsatian wine, beer and digestifs; staff guidance is frequently praised.</p>
+          <a class="menu-source" target="_blank" rel="noopener" href="https://restaurant-finkstuebel.com/">Check current menu or restaurant details ↗</a>
+        </details>
         <details class="photos">
           <summary>View photos</summary>
           <div class="photo-grid">
@@ -787,5 +1043,67 @@
     Personalized for Danny's September 2026 France trip. Restaurant hours, menus and pricing can change, so confirm shortly before visiting.
   </div>
 </footer>
+<script>
+(() => {
+  const cityButtons = Array.from(document.querySelectorAll(".city-filter"));
+  const filterButtons = Array.from(document.querySelectorAll(".restaurant-filter"));
+  const citySections = {
+    bordeaux: document.getElementById("bordeaux"),
+    strasbourg: document.getElementById("strasbourg")
+  };
+  const status = document.querySelector(".filter-status");
+  const labels = {
+    all: "All restaurants",
+    traditional: "Regional & traditional",
+    modern: "Modern",
+    value: "Best value",
+    atmosphere: "Great atmosphere"
+  };
+  let activeCity = "bordeaux";
+  let activeFilter = "all";
+
+  function render(scrollToCity = false) {
+    cityButtons.forEach(button => {
+      const selected = button.dataset.city === activeCity;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-selected", String(selected));
+    });
+    filterButtons.forEach(button => {
+      const selected = button.dataset.filter === activeFilter;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+
+    Object.entries(citySections).forEach(([city, section]) => {
+      const selectedCity = city === activeCity;
+      section.hidden = !selectedCity;
+      section.querySelectorAll(".restaurant").forEach(card => {
+        const tags = (card.dataset.tags || "").split(" ");
+        card.hidden = !selectedCity || (activeFilter !== "all" && !tags.includes(activeFilter));
+      });
+    });
+
+    const cityLabel = activeCity === "bordeaux" ? "Bordeaux" : "Strasbourg";
+    const visible = citySections[activeCity].querySelectorAll(".restaurant:not([hidden])").length;
+    status.textContent = "Showing " + cityLabel + " · " + labels[activeFilter] + " · " + visible + " restaurants";
+    if (scrollToCity) citySections[activeCity].scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  cityButtons.forEach(button => button.addEventListener("click", () => {
+    activeCity = button.dataset.city;
+    render(true);
+  }));
+  filterButtons.forEach(button => button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+    render(false);
+  }));
+  document.querySelectorAll("[data-city-nav]").forEach(link => link.addEventListener("click", event => {
+    event.preventDefault();
+    activeCity = link.dataset.cityNav;
+    render(true);
+  }));
+  render(false);
+})();
+</script>
 </body>
 </html>
