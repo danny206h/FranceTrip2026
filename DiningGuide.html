@@ -381,6 +381,58 @@
       border-radius: 8px;
     }
 
+    .criteria {
+      margin-bottom: 18px;
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .criteria h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+      font-weight: 500;
+    }
+
+    .criteria p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .criterion {
+      padding: 12px;
+      background: #fbf7ef;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .criterion strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green);
+      font: 800 0.76rem/1.2 Arial, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .rating-notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     @media (max-width: 780px) {
       .status { width: 100%; margin-left: 0; }
       .detail-layout { grid-template-columns: 1fr; }
@@ -399,6 +451,23 @@
 </header>
 
 <main>
+  <section class="criteria" aria-labelledby="criteria-title">
+    <h2 id="criteria-title">Evaluation Criteria</h2>
+    <p>Restaurants are ordered by a unified rank created from the current dining data and your stated preferences.</p>
+    <div class="criteria-grid">
+      <div class="criterion"><strong>35% Taste Fit</strong> Regional identity, classic or grounded cooking, ingredient quality, and whether the restaurant matches your style.</div>
+      <div class="criterion"><strong>25% Public Proof</strong> Public rating, review volume, consistency, and guide signals such as Michelin or Bib Gourmand.</div>
+      <div class="criterion"><strong>25% Value</strong> Cost relative to quality, lunch formulas, menu flexibility, and whether the meal feels worth the spend.</div>
+      <div class="criterion"><strong>15% Atmosphere</strong> Sense of place, room character, wine-country or Alsatian/Bordeaux feel, and usefulness for the trip.</div>
+    </div>
+    <div class="rating-notes">
+      <p><strong>Rank:</strong> the overall audited order across all cities. Lower rank is better.</p>
+      <p><strong>Rating:</strong> the personalized taste-match score from the restaurant card, separate from public reviews.</p>
+      <p><strong>Review:</strong> the strongest public-proof signal found in the card data, such as Tripadvisor, TheFork, Michelin, or Bib Gourmand.</p>
+      <p><strong>Tags:</strong> filters such as Best value, Traditional, Modern, Atmosphere, Lunch, and Fancy Dinner are derived from the restaurant data and meal notes.</p>
+    </div>
+  </section>
+
   <section class="toolbar" aria-label="Dining list filters">
     <input class="search" type="search" placeholder="Search restaurant, city, tag, review..." aria-label="Search restaurants" />
     <button type="button" class="control-btn active" data-city="all">All</button>
