@@ -1112,14 +1112,19 @@
       section.querySelectorAll(".restaurant").forEach(card => {
         const tags = (card.dataset.tags || "").split(" ");
         const isBudget = tags.includes("budget");
-        const matches = activeFilter === "all" ? !isBudget : tags.includes(activeFilter);
+        const matches = activeFilter === null
+          ? true
+          : activeFilter === "all"
+            ? !isBudget
+            : tags.includes(activeFilter);
         card.hidden = !selectedCity || !matches;
       });
     });
 
     const cityLabel = activeCity === "bordeaux" ? "Bordeaux" : "Strasbourg";
     const visible = citySections[activeCity].querySelectorAll(".restaurant:not([hidden])").length;
-    status.textContent = "Showing " + cityLabel + " · " + labels[activeFilter] + " · " + visible + " restaurants";
+    const filterLabel = activeFilter === null ? "All restaurants" : labels[activeFilter];
+    status.textContent = "Showing " + cityLabel + " · " + filterLabel + " · " + visible + " restaurants";
     if (scrollToCity) citySections[activeCity].scrollIntoView({behavior:"smooth", block:"start"});
   }
 
@@ -1128,7 +1133,7 @@
     render(true);
   }));
   filterButtons.forEach(button => button.addEventListener("click", () => {
-    activeFilter = button.dataset.filter;
+    activeFilter = activeFilter === button.dataset.filter ? null : button.dataset.filter;
     render(false);
   }));
   document.querySelectorAll("[data-city-nav]").forEach(link => link.addEventListener("click", event => {
