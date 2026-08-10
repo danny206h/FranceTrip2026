@@ -97,6 +97,24 @@
       color:var(--accent);font-family:Arial,sans-serif;font-size:.86rem;text-decoration:none;
       border-bottom:1px solid var(--accent)
     }
+    .photos{
+      border-top:1px solid var(--line);margin-top:17px;padding-top:14px
+    }
+    .photos summary{
+      cursor:pointer;color:var(--accent);font-family:Arial,sans-serif;font-size:.9rem;font-weight:700
+    }
+    .photos summary:hover{color:var(--accent2)}
+    .photo-grid{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:13px
+    }
+    .photo-grid figure{margin:0;min-width:0}
+    .photo-grid img{
+      display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:#efe9dd
+    }
+    .photo-grid figcaption{
+      margin-top:5px;color:var(--muted);font-family:Arial,sans-serif;font-size:.72rem
+    }
+    .photo-grid figcaption a{color:inherit}
     .map{
       display:inline-block;margin-top:10px;text-decoration:none;
       border-bottom:1px solid var(--accent);color:var(--accent);font-family:Arial,sans-serif;font-size:.9rem
@@ -177,6 +195,19 @@
         <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€</span><span class="pill">Traditional Southwest</span></div>
         <p>A Bordeaux institution rooted in Gascony and Guyenne, with rustic country-auberge character and hearth cooking. Think duck-fat potatoes, meats, charcuterie and deep Southwest identity.</p>
         <p class="why">Why it fits: regional authenticity is the whole point.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://weur-cdn.lacarte.menu/storage/media/company_gallery/84105843/conversions/contribution_gallery.jpg" alt="La Tupina terrace in Bordeaux">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://lacarte.menu/restaurants/bordeaux/la-tupina">LaCarte</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cdn.thefork.com/tf-lab/image/upload/f_auto%2Cq_auto%2Cw_800%2Cc_limit/customer/a61cb2a4-9fcf-40a7-8e82-96b62969397c/2ddf15d1-3312-4b16-9dd6-5acbd86844c5.jpg" alt="Southwestern food at La Tupina">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/la-tupina-r184">TheFork</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Diners repeatedly praise the hearth-cooked meats, duck, fries cooked in duck fat, and memorable rustic atmosphere. The recurring caution is that prices can feel high and experiences become less consistent when the restaurant is busy.</p>
@@ -191,6 +222,19 @@
         <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€€</span><span class="pill">~10 min from hotel</span></div>
         <p>Old Bordeaux brasserie character with classic dishes such as oysters, sole, liver, duck, tournedos and cèpes. More polished than rustic, but still traditional in spirit.</p>
         <p class="why">Why it fits: elegant without turning dinner into performance art.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cdn-ilbobfj.nitrocdn.com/LLQyioEDmPooSUeshdcABKPnDEWJyTwh/assets/images/optimized/rev-fefab80/quoifaireabordeaux.com/wp-content/uploads/2024/02/331715726_596640065809591_2500711170671892615_n-1024x768.jpg" alt="Le Noailles exterior in Bordeaux">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://quoifaireabordeaux.com/place-tourny-bordeaux-restaurant/">Quoi faire à Bordeaux</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://stat.ameba.jp/user_images/20240827/19/watasanland0804/7f/3e/j/o1080081315479662454.jpg" alt="Duck confit and fries at Le Noailles">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://ameblo.jp/watasanland0804/entry-12861658262.html">Watasanland</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Reviewers like the oysters, duck, meat dishes, broad wine list, and polished but lively brasserie atmosphere. It can be extremely busy, but many diners see the crowd—particularly the local clientele—as part of its appeal.</p>
@@ -205,6 +249,19 @@
         <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€</span><span class="pill">Southwest classics</span></div>
         <p>Lively, generous, meat-and-wine-oriented Bordeaux dining. A good place for charcuterie, duck, beef, Bordelaise flavors and a broad regional wine list.</p>
         <p class="why">Why it fits: robust food with very little pretense.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://viagemegastronomia.cnnbrasil.com.br/wp-content/uploads/sites/5/2021/09/la-brasserie-bordalaise-.jpg?crop=0&h=477&w=849" alt="Brasserie Bordelaise exterior and terrace">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.cnnbrasil.com.br/viagemegastronomia/gastronomia/restaurantes-imperdiveis-em-bordeaux-a-capital-mundial-do-vinho-na-franca/">CNN Brasil</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://weur-cdn.lacarte.menu/storage/media/company_gallery/68462610/conversions/contribution_gallery.jpg" alt="Steak and fries at Brasserie Bordelaise">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://lacarte.menu/restaurants/bordeaux/la-brasserie-bordelaise">LaCarte</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Diners praise the generous Southwestern food, energetic room, and strong meat-and-wine experience. Feedback on service is mixed, particularly during crowded periods.</p>
@@ -219,6 +276,19 @@
         <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€€€</span><span class="pill">Historic dining room</span></div>
         <p>A grand historic Bordeaux restaurant with one of the city's most distinctive interiors. Price is the weak point, but the room scores very highly for uniqueness and old-world atmosphere.</p>
         <p class="why">Best use: consider lunch rather than a full splurge dinner.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://www.bordeaux-tourisme.com/sites/bordeaux_tourisme/files/styles/sit_main_image/public/externals/64d6a76edd087a6920732d86fc754779.jpg.webp?itok=pKzjP-pF" alt="Historic dining room at Le Chapon Fin">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.bordeaux-tourisme.com/restaurant/chapon-fin.html">Bordeaux Tourisme</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://uploads.lebonbon.fr/source/2023/bordeaux/juin/0H1A8998.jpg" alt="A composed dish at Le Chapon Fin">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://en.lebonbon.fr/bordeaux/tops-food-and-drink/spanchapon-fin-bordeauxspan-spanmichelin-guidespan/">Le Bonbon</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Recent diners highlight the extraordinary dining room, refined cooking, polished presentations, and warm professional service. The main reservation is price: this is an occasion restaurant, and not everyone considers the experience good value.</p>
@@ -233,6 +303,19 @@
         <div class="meta"><span class="pill stars">★★★½</span><span class="pill">€€</span><span class="pill">Casual bistro</span></div>
         <p>A relaxed bistro choice when you want good French food without making the evening revolve around the restaurant. Slightly more modern in approach, but still grounded enough to remain useful.</p>
         <p class="why">Best use: spontaneous lunch or low-key dinner.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/63471/1500x750/590993.jpg" alt="Bistrot Maurice terrace in Bordeaux">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.privateaser.com/lieu/63471-bistrot-maurice">Privateaser</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://www.guide-bordeaux-gironde.com/_bibli/annonces/10507/hd/bistrot-maurice-24-01.jpg" alt="Seasonal dishes at Bistrot Maurice">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.guide-bordeaux-gironde.com/fr/tourisme/se-restaurer/restaurants/bordeaux-61/bistrot-maurice-10507.html">Guide Bordeaux Gironde</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Diners frequently mention fresh ingredients, highly flavorful cooking, friendly service, and excellent value. The creative combinations are usually described as thoughtful rather than gimmicky.</p>
@@ -257,6 +340,19 @@
         <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€</span><span class="pill">Traditional winstub</span></div>
         <p>Traditional Alsatian dishes, a wood-paneled room and a strong local wine identity. A serious choice for regional food rather than a tourist-theme version of Alsace.</p>
         <p class="why">Why it fits: indigenous, atmospheric and unashamedly traditional.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cpsgygezfa.cloudimg.io/_gm_/2ec7e776794641e49a810e6ab827834f.jpeg?w=960" alt="Wood-paneled dining room at Au Pont Corbeau">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.viamichelin.fr/cartes-plans/restaurants/poi/strasbourg-67000-2b1dv6p">ViaMichelin</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://strafari.files.wordpress.com/2022/04/strafari-strasbourg-restaurant-food-winstub-pont-corbeau-2.jpeg" alt="Alsatian pork and potatoes at Au Pont Corbeau">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://strafari.fr/2022/05/22/manger-alsacien-strasbourg-restaurant-pont-corbeau/">Strafari</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Reviewers love the deeply Alsatian atmosphere, regional specialties, friendly guidance, and approachable daily menu. Tables are close together, but most diners treat that as part of the winstub experience.</p>
@@ -271,6 +367,19 @@
         <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€</span><span class="pill">Historic winstub</span></div>
         <p>A classic Strasbourg institution with the kind of intimate, wood-paneled setting that makes the meal feel inseparable from the city itself.</p>
         <p class="why">Why it fits: strong history + charm + recognizable Alsatian food.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cpsgygezfa.cloudimg.io/_gm_/bf8c77f77f3944f7b5983479b64f52a8.jpeg?w=1920" alt="Chez Yvonne exterior in Strasbourg">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.viamichelin.fr/cartes-plans/restaurants/poi/strasbourg-67000-3oz0uxq">ViaMichelin</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://salpa.fr/wp-content/uploads/2023/02/Yvonne2.jpg" alt="Traditional interior of Chez Yvonne">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://salpa.fr/en/the-group/chez-yvonne/">Salpa</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Diners praise the cozy historic interior, well-prepared Alsatian dishes, wine recommendations, and central location. Reviews are less consistent on service, with some guests reporting a warm welcome and others feeling rushed.</p>
@@ -285,6 +394,19 @@
         <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€</span><span class="pill">Rustic Alsatian</span></div>
         <p>Family-run, rustic and traditional, with generous portions and approachable prices. The little old-fashioned details are part of the appeal.</p>
         <p class="why">Why it fits: possibly the best food + atmosphere + value combination.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cdn.thefork.com/tf-lab/image/upload/w_500%2Ch_500%2Cc_fill%2Cq_auto%2Cf_jpg/restaurant/a7ecd7e6-a9dc-4723-97b0-07c7bfb15c1a/f0df294c-e595-439b-ac59-86a3e771b6a2.jpg" alt="Winstub Le Zehnerglock terrace">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/winstub-le-zehnerglock-r861330">TheFork</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cdn.thefork.com/tf-lab/image/upload/w_500%2Ch_500%2Cc_fill%2Cq_auto%2Cf_jpg/restaurant/a7ecd7e6-a9dc-4723-97b0-07c7bfb15c1a/ad29358c-e979-494c-8749-ed35777b9f2c.jpg" alt="A dish at Winstub Le Zehnerglock">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/winstub-le-zehnerglock-r861330">TheFork</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Reviewers consistently highlight homemade regional dishes, fresh ingredients, hearty portions, attentive service, and excellent value. The small room is popular, so reservations are strongly advised.</p>
@@ -299,6 +421,19 @@
         <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€</span><span class="pill">Petite France</span></div>
         <p>Stone walls, exposed beams and a cozy setting. French and Alsatian comfort dishes with enough refinement to feel special without drifting into innovation-for-innovation's-sake.</p>
         <p class="why">Best use: charming, romantic dinner in the old city.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://www.restaurantloignon.fr/wp-content/uploads/2022/07/photo-oignon-2022-07-08.jpeg" alt="Restaurant L'Oignon terrace in Petite France">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.restaurantloignon.fr/le-restaurant/">L'Oignon</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://cdn-ak.f.st-hatena.com/images/fotolife/t/temari10chan/20240913/20240913134632.jpg" alt="Alsatian choucroute at L'Oignon">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://temari10chan.hatenablog.com/entry/2024/09/16/194642">Temari</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Diners praise the cozy Petite France setting, flavorful food, generous portions, and fair prices. The recurring concern is uneven pacing—some reviewers experienced long waits despite enjoying the meal.</p>
@@ -313,6 +448,19 @@
         <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€</span><span class="pill">Central Strasbourg</span></div>
         <p>A classic central winstub with approachable pricing and traditional Alsatian dishes. Useful if the first-choice winstubs are booked.</p>
         <p class="why">Best use: dependable fallback that still feels local.</p>
+        <details class="photos">
+          <summary>View photos</summary>
+          <div class="photo-grid">
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://www.viajaredemais.com.br/wp-content/uploads/2020/06/le_tire_bouchon2.jpg" alt="Le Tire-Bouchon exterior in Strasbourg">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.viajaredemais.com.br/europa/franca/alsacia/strasbourg/le-tire-bouchon-alsacia-winstub-estrasburgo/">Viajar é Demais</a></figcaption>
+            </figure>
+            <figure>
+              <img loading="lazy" referrerpolicy="no-referrer" src="https://res.cloudinary.com/tf-lab/image/upload/f_auto%2Cq_auto%2Cw_800%2Cc_limit/customer/4b0b1fc0-73ce-4d83-ab4c-61fb23f80df5/44000ef1-4cc0-416c-9e58-83583bbb2244.jpg" alt="Alsatian food at Le Tire-Bouchon">
+              <figcaption>Photo: <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/le-tire-bouchon-r6855">TheFork</a></figcaption>
+            </figure>
+          </div>
+        </details>
         <details class="reviews">
           <summary>What diners say</summary>
           <p>Reviewers appreciate the convenient cathedral-area location, substantial Alsatian plates, and convivial winstub atmosphere. Service feedback is mixed, with delays and disorganization appearing in some accounts.</p>
