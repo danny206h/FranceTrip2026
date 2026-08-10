@@ -163,6 +163,7 @@
     @media print{
       nav{display:none}.restaurant,.panel{box-shadow:none}body{background:white}
     }
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.guide-badge{display:inline-block;border-radius:999px;padding:5px 9px;font:700 .78rem Arial,sans-serif}.guide-badge.value{background:#e1eee6;color:#24533f;border:1px solid #b9d5c4}.guide-badge.iconic{background:#f4e6cc;color:#79531e;border:1px solid #ddc18d}.good-to-know{border-top:1px solid var(--line);margin-top:17px;padding-top:14px}.good-to-know summary{cursor:pointer;color:var(--accent2);font-family:Arial,sans-serif;font-size:.9rem;font-weight:700}.good-to-know p{margin:12px 0 4px}.good-to-know a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)}
   </style>
 </head>
 <body>
@@ -189,7 +190,7 @@
     <div class="panel">
       <div class="city-kicker">Selection philosophy</div>
       <h2>Your Restaurant Filter</h2>
-      <p>The guide favors restaurants with excellent cooking, a distinctive point of view, genuine character, and prices that still feel rational. Regional identity and a strong sense of place matter, but traditional and modern restaurants are judged on equal terms. Creativity is welcome when it makes the meal better; novelty, fusion, or trendiness earns no automatic bonus.</p>
+      <p>Restaurants are ranked for your priorities: 35% taste fit, 25% public reviews and review volume, 25% value, and 15% atmosphere and sense of place. Moderate-cost restaurants can outrank expensive ones when the food and setting are comparably strong. Public ratings remain separate from the personalized taste-match score, and famous but polarizing choices are visibly marked as iconic exceptions.</p>
       <div class="guide-controls">
         <div class="control-label">Choose a city</div>
         <div class="control-row" role="tablist" aria-label="City">
@@ -228,7 +229,8 @@
       <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#1 — Strongest taste match</div>
         <h3>La Tupina</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€ · Est. €160–€220 for two</span><span class="pill">Traditional Southwest</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★★</span><span class="pill">€€–€€€ · Est. €160–€220 for two</span><span class="pill">Traditional Southwest</span><span class="pill">Public rating · Tripadvisor 3.8/5 · 2,000+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>A Bordeaux institution rooted in Gascony and Guyenne, with rustic country-auberge character and hearth cooking. Think duck-fat potatoes, meats, charcuterie and deep Southwest identity.</p>
         <p class="why">Why it fits: regional authenticity is the whole point.</p>
         <details class="menu-sample">
@@ -266,13 +268,16 @@
           <p>Diners repeatedly praise the hearth-cooked meats, duck, fries cooked in duck fat, and memorable rustic atmosphere. The recurring caution is that prices can feel high and experiences become less consistent when the restaurant is busy.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d952751-Reviews-La_Tupina-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Reviews are notably polarized: <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d952751-Reviews-La_Tupina-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Tripadvisor gives it 3.8/5</a>, while <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/la-tupina-r184/reviews">TheFork gives it 9.2/10</a>. Choose it for the hearth cooking and Southwest identity, not guaranteed value.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Tupina+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#2 — Classic elegance</div>
         <h3>Le Noailles</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€€ · Est. €135–€185 for two</span><span class="pill">~10 min from hotel</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★★</span><span class="pill">€€€ · Est. €135–€185 for two</span><span class="pill">~10 min from hotel</span><span class="pill">Public rating · Tripadvisor 3.9/5 · 1,500+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>Old Bordeaux brasserie character with classic dishes such as oysters, sole, liver, duck, tournedos and cèpes. More polished than rustic, but still traditional in spirit.</p>
         <p class="why">Why it fits: elegant without turning dinner into performance art.</p>
         <details class="menu-sample">
@@ -305,13 +310,16 @@
           <p>Reviewers like the oysters, duck, meat dishes, broad wine list, and polished but lively brasserie atmosphere. It can be extremely busy, but many diners see the crowd—particularly the local clientele—as part of its appeal.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d1810068-Reviews-Le_Noailles-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This is included for exceptional identity or atmosphere despite public feedback below the normal threshold. Read the linked reviews carefully before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d1810068-Reviews-Le_Noailles-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.lenoailles.fr/en/la-carte/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Noailles+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#3 — Hearty Bordeaux night</div>
         <h3>Brasserie Bordelaise</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €110–€150 for two</span><span class="pill">Southwest classics</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€ · Est. €110–€150 for two</span><span class="pill">Southwest classics</span><span class="pill">Public rating · Tripadvisor 3.7/5 · 3,500+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>Lively, generous, meat-and-wine-oriented Bordeaux dining. A good place for charcuterie, duck, beef, Bordelaise flavors and a broad regional wine list.</p>
         <p class="why">Why it fits: robust food with very little pretense.</p>
         <details class="menu-sample">
@@ -348,13 +356,15 @@
           <p>Diners praise the generous Southwestern food, energetic room, and strong meat-and-wine experience. Feedback on service is mixed, particularly during crowded periods.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d1441168-Reviews-La_Brasserie_Bordelaise-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This is included for exceptional identity or atmosphere despite public feedback below the normal threshold. Read the linked reviews carefully before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d1441168-Reviews-La_Brasserie_Bordelaise-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.cnnbrasil.com.br/viagemegastronomia/gastronomia/restaurantes-imperdiveis-em-bordeaux-a-capital-mundial-do-vinho-na-franca/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Brasserie+Bordelaise+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern atmosphere">
         <div class="rank">#4 — Atmosphere wildcard</div>
         <h3>Le Chapon Fin</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€€€ · Est. €220–€320 for two</span><span class="pill">Historic dining room</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★</span><span class="pill">€€€€ · Est. €220–€320 for two</span><span class="pill">Historic dining room</span><span class="pill">Public rating · Tripadvisor 4.5/5 · 700+ reviews</span></div>
         <p>A grand historic Bordeaux restaurant with one of the city's most distinctive interiors. Price is the weak point, but the room scores very highly for uniqueness and old-world atmosphere.</p>
         <p class="why">Best use: consider lunch rather than a full splurge dinner.</p>
         <details class="menu-sample">
@@ -391,13 +401,16 @@
           <p>Recent diners highlight the extraordinary dining room, refined cooking, polished presentations, and warm professional service. The main reservation is price: this is an occasion restaurant, and not everyone considers the experience good value.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d719074-Reviews-Restaurant_Le_Chapon_Fin_Bordeaux-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d719074-Reviews-Restaurant_Le_Chapon_Fin_Bordeaux-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.chapon-fin.com/en/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Chapon+Fin+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern value">
         <div class="rank">#5 — Casual backup</div>
         <h3>Bistrot Maurice</h3>
-        <div class="meta"><span class="pill stars">★★★½</span><span class="pill">€€ · Est. €95–€125 for two</span><span class="pill">Casual bistro</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★½</span><span class="pill">€€ · Est. €95–€125 for two</span><span class="pill">Casual bistro</span><span class="pill">Public rating · Tripadvisor 4.7/5 · 800+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div>
         <p>A relaxed bistro choice when you want good French food without making the evening revolve around the restaurant. Slightly more modern in approach, but still grounded enough to remain useful.</p>
         <p class="why">Best use: spontaneous lunch or low-key dinner.</p>
         <details class="menu-sample">
@@ -434,6 +447,8 @@
           <p>Diners frequently mention fresh ingredients, highly flavorful cooking, friendly service, and excellent value. The creative combinations are usually described as thoughtful rather than gimmicky.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d7131911-Reviews-Bistrot_Maurice-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d7131911-Reviews-Bistrot_Maurice-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.bistrotmaurice.com/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bistrot+Maurice+Bordeaux">Open in Maps ↗</a>
       </article>
 
@@ -441,7 +456,7 @@
       <article class="restaurant" data-tags="modern value">
         <div class="rank">#6 — Best modern bistro addition</div>
         <h3>Sens</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €120–€160 for two</span><span class="pill">Modern French bistro</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€–€€€ · Est. €120–€160 for two</span><span class="pill">Modern French bistro</span><span class="pill">Public rating · Tripadvisor 4.7/5 · 130+ reviews</span></div>
         <p>Chef Alexandre Bru gives recognizable French bistro cooking a precise contemporary treatment, with sourced ingredients, lucid flavors and menus that remain sensibly priced.</p>
         <p class="why">Why it fits: modern and creative, but flavor and execution remain the point.</p>
         <details class="menu-sample">
@@ -478,13 +493,15 @@
           <p>Diners consistently praise the polished cooking, attractive presentation and warm service. The multi-course format feels refined without becoming stiff, though dinner naturally costs more than the excellent-value lunch.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/sens-r718896/reviews">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Public feedback is strong, but this is more modern or creative than your core preference. Treat it as an alternative when you want variety. <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/sens-r718896">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://guide.michelin.com/us/en/nouvelle-aquitaine/bordeaux/restaurant/sens-1198521">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sens+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern value atmosphere">
         <div class="rank">#7 — Chic brasserie and value</div>
         <h3>Madame B</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €105–€145 for two</span><span class="pill">2026 Bib Gourmand</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€ · Est. €105–€145 for two</span><span class="pill">2026 Bib Gourmand</span><span class="pill">Public rating · Tripadvisor 4.7/5</span></div>
         <p>A polished, retro-leaning hotel brasserie where nostalgic dishes such as confit pork, venison in red wine and stuffed cabbage receive contemporary touches and particularly careful sauces.</p>
         <p class="why">Why it fits: elegance, comfort and Michelin-recognized value in the same room.</p>
         <details class="menu-sample">
@@ -521,13 +538,15 @@
           <p>Reviewers frequently mention the beautiful room, imaginative menu, careful presentation and attentive staff. A few find the format less flexible than a conventional brasserie, but overall satisfaction is notably strong.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d26352789-Reviews-Restaurant_Bar_Madame_B-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Public feedback is strong, but this is more modern or creative than your core preference. Treat it as an alternative when you want variety. <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/restaurant-bar-madame-b-r805432">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.restaurantmadameb.com/en/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Madame+B+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern atmosphere">
         <div class="rank">#8 — Local, modern and casual</div>
         <h3>OST</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €110–€150 for two</span><span class="pill">Local · Modern</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€–€€€ · Est. €110–€150 for two</span><span class="pill">Local · Modern</span><span class="pill">Public rating · Tripadvisor 4.9/5 · 80+ reviews</span></div>
         <p>A relaxed stone-vaulted bistro combining seasonal French ingredients with confidently modern ideas. The format is flexible, the room is understated and the cooking remains generous.</p>
         <p class="why">Why it fits: creative cooking in a sober, convivial setting rather than a theatrical one.</p>
         <details class="menu-sample">
@@ -564,13 +583,16 @@
           <p>Diners praise the welcoming owners, attractive room, inventive combinations and notably attentive service. The international accents are prominent, but reviews emphasize balance and deliciousness rather than novelty alone.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d27171731-Reviews-Ost_Bordeaux-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Public feedback is strong, but this is more modern or creative than your core preference. Treat it as an alternative when you want variety. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d27171731-Reviews-Ost_Bordeaux-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.ostbordeaux.com/en/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=OST+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern value">
         <div class="rank">#9 — Creative wildcard</div>
         <h3>Racines by Daniel Gallacher</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Bib Gourmand</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Bib Gourmand</span><span class="pill">Public rating · Tripadvisor 4.6/5 · 1,200+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div>
         <p>A self-taught Scottish chef changes the market menu every week, producing inventive, meticulously prepared dishes that may roam beyond France while retaining a strong bistro structure.</p>
         <p class="why">Why it fits: it earns attention through execution and value, not because unconventional combinations are automatically better.</p>
         <details class="menu-sample">
@@ -607,23 +629,39 @@
           <p>Diners praise the friendly service, frequently changing menu, careful presentation and unusually strong value. The compact restaurant is popular, and reservations are advisable.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d8093092-Reviews-Racines-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187079-d8093092-Reviews-Racines-Bordeaux_Gironde_Nouvelle_Aquitaine.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://racines-bordeaux.com/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Racines+Daniel+Gallacher+Bordeaux">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Bouillon Saint-Jean</h3><div class="meta"><span class="pill">★ 4.5/5 · 5,880 reviews</span><span class="pill">€ · Est. €55–€75 for two</span><span class="pill">Traditional French</span></div><p>Unfussy bouillon classics opposite the station: œufs mayonnaise, onion soup, sausage and mash, pot-au-feu and veal blanquette.</p><p class="why">Best for: the least expensive complete French dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Egg mayonnaise; sausage and mash or veal blanquette; house red or draft beer.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Rating shown from Google review aggregation. Reviews praise value and the grand historic room; the main cautions are noise and occasional inconsistency.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Bouillon+Saint-Jean+Bordeaux">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Bouillon Saint-Jean</h3><div class="meta"><span class="pill">★ 4.5/5 · 5,880 reviews</span><span class="pill">€ · Est. €55–€75 for two</span><span class="pill">Traditional French</span></div><p>Unfussy bouillon classics opposite the station: œufs mayonnaise, onion soup, sausage and mash, pot-au-feu and veal blanquette.</p><p class="why">Best for: the least expensive complete French dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Egg mayonnaise; sausage and mash or veal blanquette; house red or draft beer.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Rating shown from Google review aggregation. Reviews praise value and the grand historic room; the main cautions are noise and occasional inconsistency.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Bouillon+Saint-Jean+Bordeaux">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Bouillon+Saint-Jean+Bordeaux">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>La Tanière</h3><div class="meta"><span class="pill">★ 4.6/5 · 406 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Southwestern bistro</span></div><p>A cozy, traditional bistro known for duck confit, beef bourguignon and other filling regional dishes.</p><p class="why">Best for: classic comfort food in the historic center.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Country starter; duck confit or beef bourguignon; Bordeaux red by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Reviewers repeatedly mention generous portions, flavor and a strong quality-price ratio.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Taniere+Bordeaux">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>La Tanière</h3><div class="meta"><span class="pill">★ 4.6/5 · 406 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Southwestern bistro</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A cozy, traditional bistro known for duck confit, beef bourguignon and other filling regional dishes.</p><p class="why">Best for: classic comfort food in the historic center.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Country starter; duck confit or beef bourguignon; Bordeaux red by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Reviewers repeatedly mention generous portions, flavor and a strong quality-price ratio.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Taniere+Bordeaux">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Taniere+Bordeaux">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Les Drôles</h3><div class="meta"><span class="pill">★ 4.7/5 · 4,093 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€90 for two</span><span class="pill">Traditional Southwest</span></div><p>Small, convivial dining room serving generous French and Southwestern dishes with straightforward set-menu value.</p><p class="why">Best for: an inexpensive, unpretentious sit-down dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Regional starter; duck or market main; house Bordeaux wine.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>A notably strong rating at high volume; diners praise the fixed-price value, friendly service and duck dishes.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Droles+Bordeaux">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Les Drôles</h3><div class="meta"><span class="pill">★ 4.7/5 · 4,093 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€90 for two</span><span class="pill">Traditional Southwest</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>Small, convivial dining room serving generous French and Southwestern dishes with straightforward set-menu value.</p><p class="why">Best for: an inexpensive, unpretentious sit-down dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Regional starter; duck or market main; house Bordeaux wine.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>A notably strong rating at high volume; diners praise the fixed-price value, friendly service and duck dishes.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Droles+Bordeaux">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Droles+Bordeaux">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Au Bistrot</h3><div class="meta"><span class="pill">★ 4.6/5 · 256 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€90 for two</span><span class="pill">Market bistro</span></div><p>Fresh, simple French market cooking near Marché des Capucins, with dishes such as garbure, lamb shoulder and pork shank.</p><p class="why">Best for: honest local cooking with Michelin recognition and low prices.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Herring or tongue salad; lamb shoulder or pork shank; inexpensive Bordeaux by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Well rated for traditional cooking and value; also listed in the 2026 Michelin Guide.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Au+Bistrot+Bordeaux">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Au Bistrot</h3><div class="meta"><span class="pill">★ 4.6/5 · 256 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€90 for two</span><span class="pill">Market bistro</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>Fresh, simple French market cooking near Marché des Capucins, with dishes such as garbure, lamb shoulder and pork shank.</p><p class="why">Best for: honest local cooking with Michelin recognition and low prices.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Herring or tongue salad; lamb shoulder or pork shank; inexpensive Bordeaux by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Well rated for traditional cooking and value; also listed in the 2026 Michelin Guide.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Au+Bistrot+Bordeaux">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Au+Bistrot+Bordeaux">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Brasserie des Chartrons</h3><div class="meta"><span class="pill">★ 9.3/10 · TheFork</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Neighborhood brasserie</span></div><p>Old-school brasserie warmth, house-made sauces and recognizable French dishes in the Chartrons district.</p><p class="why">Best for: polished brasserie character at a rational price.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Market starter; butcher's cut or fish; Médoc or Graves by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Recent verified reviews praise the food, friendly service, traditional cooking and wine selection.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Brasserie+des+Chartrons+Bordeaux">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Brasserie des Chartrons</h3><div class="meta"><span class="pill">★ 9.3/10 · TheFork</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Neighborhood brasserie</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>Old-school brasserie warmth, house-made sauces and recognizable French dishes in the Chartrons district.</p><p class="why">Best for: polished brasserie character at a rational price.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Market starter; butcher's cut or fish; Médoc or Graves by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Recent verified reviews praise the food, friendly service, traditional cooking and wine selection.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Brasserie+des+Chartrons+Bordeaux">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Brasserie+des+Chartrons+Bordeaux">Open in Maps</a>
       </article>    </div>
   </div>
 </section>
@@ -638,7 +676,8 @@
       <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#1 — Top Strasbourg choice</div>
         <h3>Au Pont Corbeau</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Traditional winstub</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Traditional winstub</span><span class="pill">Public rating · Tripadvisor 4.1/5 · 1,000+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>Traditional Alsatian dishes, a wood-paneled room and a strong local wine identity. A serious choice for regional food rather than a tourist-theme version of Alsace.</p>
         <p class="why">Why it fits: indigenous, atmospheric and unashamedly traditional.</p>
         <details class="menu-sample">
@@ -676,13 +715,16 @@
           <p>Reviewers love the deeply Alsatian atmosphere, regional specialties, friendly guidance, and approachable daily menu. Tables are close together, but most diners treat that as part of the winstub experience.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d1605396-Reviews-Au_Pont_Corbeau-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This is included for exceptional identity or atmosphere despite public feedback below the normal threshold. Read the linked reviews carefully before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d1605396-Reviews-Au_Pont_Corbeau-Strasbourg_Bas_Rhin_Grand_Est.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.aupontcorbeau.fr/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Au+Pont+Corbeau+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#2 — Historic institution</div>
         <h3>Chez Yvonne</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€–€€€ · Est. €100–€140 for two</span><span class="pill">Historic winstub</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★★</span><span class="pill">€€–€€€ · Est. €100–€140 for two</span><span class="pill">Historic winstub</span><span class="pill">Public rating · Tripadvisor 3.8/5 · 2,500+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>A classic Strasbourg institution with the kind of intimate, wood-paneled setting that makes the meal feel inseparable from the city itself.</p>
         <p class="why">Why it fits: strong history + charm + recognizable Alsatian food.</p>
         <details class="menu-sample">
@@ -719,13 +761,16 @@
           <p>Diners praise the cozy historic interior, well-prepared Alsatian dishes, wine recommendations, and central location. Reviews are less consistent on service, with some guests reporting a warm welcome and others feeling rushed.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d877689-Reviews-Chez_Yvonne-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>The historic winstub atmosphere is the reason to consider it. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d877689-Reviews-Chez_Yvonne-Strasbourg_Bas_Rhin_Grand_Est.html">Tripadvisor is mixed at 3.8/5</a>, while <a target="_blank" rel="noopener" href="https://www.travelguys.fr/en/2023/10/05/chez-yvonne-restaurant-in-strasbourg-an-excellent-winstub/">this detailed independent visit is strongly positive</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Chez+Yvonne+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#3 — Value winner</div>
         <h3>Winstub Le Zehnerglock</h3>
-        <div class="meta"><span class="pill stars">★★★★★</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Rustic Alsatian</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★★</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Rustic Alsatian</span><span class="pill">Public rating · Tripadvisor 4.6/5 · 840+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div>
         <p>Family-run, rustic and traditional, with generous portions and approachable prices. The little old-fashioned details are part of the appeal.</p>
         <p class="why">Why it fits: possibly the best food + atmosphere + value combination.</p>
         <details class="menu-sample">
@@ -763,13 +808,16 @@
           <p>Reviewers consistently highlight homemade regional dishes, fresh ingredients, hearty portions, attentive service, and excellent value. The small room is popular, so reservations are strongly advised.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d3682583-Reviews-Winstub_Le_Zehnerglock-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.thefork.com/restaurant/winstub-le-zehnerglock-r861330">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.zehnerglock.fr/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Winstub+Le+Zehnerglock+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#4 — Charming evening</div>
         <h3>L'Oignon</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Petite France</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€ · Est. €85–€115 for two</span><span class="pill">Petite France</span><span class="pill">Public rating · Tripadvisor 4.6/5 · 1,300+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div>
         <p>Stone walls, exposed beams and a cozy setting. French and Alsatian comfort dishes with enough refinement to feel special without drifting into innovation-for-innovation's-sake.</p>
         <p class="why">Best use: charming, romantic dinner in the old city.</p>
         <details class="menu-sample">
@@ -807,13 +855,16 @@
           <p>Diners praise the cozy Petite France setting, flavorful food, generous portions, and fair prices. The recurring concern is uneven pacing—some reviewers experienced long waits despite enjoying the meal.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d2477376-Reviews-Restaurant_L_Oignon-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d2477376-Reviews-Restaurant_L_Oignon-Strasbourg_Bas_Rhin_Grand_Est.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://www.restaurantloignon.fr/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=L%27Oignon+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#5 — Reliable traditional backup</div>
         <h3>Le Tire-Bouchon</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Central Strasbourg</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★</span><span class="pill">€€ · Est. €90–€125 for two</span><span class="pill">Central Strasbourg</span><span class="pill">Public rating · Tripadvisor · 3,700+ mixed reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>A classic central winstub with approachable pricing and traditional Alsatian dishes. Useful if the first-choice winstubs are booked.</p>
         <p class="why">Best use: dependable fallback that still feels local.</p>
         <details class="menu-sample">
@@ -851,6 +902,8 @@
           <p>Reviewers appreciate the convenient cathedral-area location, substantial Alsatian plates, and convivial winstub atmosphere. Service feedback is mixed, with delays and disorganization appearing in some accounts.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d779249-Reviews-Le_Tire_Bouchon-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>A photogenic, tourist-heavy winstub with divided feedback. Compare <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d779249-Reviews-Le_Tire_Bouchon-Strasbourg_Bas_Rhin_Grand_Est.html">Tripadvisor diner reviews</a> with <a target="_blank" rel="noopener" href="https://fr.gaultmillau.com/en/restaurants/winstub-le-tire-bouchon">Gault &amp; Millau’s nuanced assessment</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Tire-Bouchon+Strasbourg">Open in Maps ↗</a>
       </article>
 
@@ -858,7 +911,8 @@
       <article class="restaurant" data-tags="traditional atmosphere">
         <div class="rank">#6 — Best atmosphere addition</div>
         <h3>Brasserie des Haras</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€€ · Est. €140–€190 for two</span><span class="pill">Historic former stables</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€€ · Est. €140–€190 for two</span><span class="pill">Historic former stables</span><span class="pill">Public rating · Tripadvisor 4.2/5 · 2,100+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge iconic">◆ Iconic exception</span></div>
         <p>A grand but welcoming brasserie inside Strasbourg's former royal stud farm, combining historic stone and timber with dramatic contemporary design and polished French cooking.</p>
         <p class="why">Why it fits: one of the city's most memorable rooms, with food substantial enough to justify the setting.</p>
         <details class="menu-sample">
@@ -895,13 +949,15 @@
           <p>Diners repeatedly praise the architecture, courtyard, professional service and attractive presentation. The consistent caution is price: the setting is exceptional, but some guests question the overall value.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d4748934-Reviews-Brasserie_Les_Haras-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This is included for exceptional identity or atmosphere despite public feedback below the normal threshold. Read the linked reviews carefully before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d4748934-Reviews-Brasserie_Les_Haras-Strasbourg_Bas_Rhin_Grand_Est.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://les-haras-brasserie.com/?lng=en">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Brasserie+des+Haras+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern value atmosphere">
         <div class="rank">#7 — Best modern Strasbourg addition</div>
         <h3>Honesty</h3>
-        <div class="meta"><span class="pill stars">★★★★½</span><span class="pill">€€–€€€ · Est. €125–€165 for two</span><span class="pill">Seasonal modern French</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★½</span><span class="pill">€€–€€€ · Est. €125–€165 for two</span><span class="pill">Seasonal modern French</span><span class="pill">Public rating · Tripadvisor 4.7/5 · 90+ reviews</span></div>
         <p>Chef Tiffany Schwoob serves precise, delicate seasonal cooking in a tiny, softly lit dining room. The menus are original but remain focused on balance, careful seasoning and the character of the ingredients.</p>
         <p class="why">Why it fits: a genuinely modern restaurant whose creativity is validated by the results.</p>
         <details class="menu-sample">
@@ -938,13 +994,15 @@
           <p>Diners praise the intimate room, impeccable service, fair portions and distinctive flavors. Small complimentary courses and thoughtful pacing make the meal feel generous for the price.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d17724040-Reviews-Honesty-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Public feedback is strong, but this is more modern or creative than your core preference. Treat it as an alternative when you want variety. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d17724040-Reviews-Honesty-Strasbourg_Bas_Rhin_Grand_Est.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://fr.gaultmillau.com/en/restaurants/honesty">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honesty+Restaurant+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="modern value">
         <div class="rank">#8 — Modern and approachable</div>
         <h3>Le Banquet des Sophistes</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Modern bistronomy</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★</span><span class="pill">€€ · Est. €100–€140 for two</span><span class="pill">Modern bistronomy</span><span class="pill">Public rating · Tripadvisor 4.5/5 · 570+ reviews</span></div>
         <p>A convivial modern bistro with a frequently changing market menu, carefully worked plates and eclectic influences used with restraint rather than as a sales pitch.</p>
         <p class="why">Why it fits: one of the clearest ways to explore contemporary Strasbourg cooking at a moderate price.</p>
         <details class="menu-sample">
@@ -981,13 +1039,16 @@
           <p>Diners commonly highlight imaginative combinations, careful plating, welcoming service and good value. The menu's eclectic touches will appeal most when you want a deliberate break from traditional Alsatian food.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Search?q=Le%20Banquet%20des%20Sophistes%20Strasbourg">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>Public feedback is strong, but this is more modern or creative than your core preference. Treat it as an alternative when you want variety. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Search?q=Le%20Banquet%20des%20Sophistes%20Strasbourg">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://le-banquet.com/concept/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Le+Banquet+des+Sophistes+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="traditional value atmosphere">
         <div class="rank">#9 — Neighborhood winstub</div>
         <h3>Fink'Stuebel</h3>
-        <div class="meta"><span class="pill stars">★★★★</span><span class="pill">€€ · Est. €85–€120 for two</span><span class="pill">Traditional Alsatian</span></div>
+        <div class="meta"><span class="pill stars">Taste match ★★★★</span><span class="pill">€€ · Est. €85–€120 for two</span><span class="pill">Traditional Alsatian</span><span class="pill">Public rating · Tripadvisor 4.5/5 · 600+ reviews</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div>
         <p>A rustic neighborhood winstub in Finkwiller serving emblematic Alsatian dishes in a small, characterful room away from the most concentrated tourist traffic.</p>
         <p class="why">Why it fits: another authentic local option, but with more neighborhood intimacy than the central institutions.</p>
         <details class="menu-sample">
@@ -1025,23 +1086,40 @@
           <p>Reviewers praise the friendly staff, clear regional wine selection, generous traditional cooking and cozy atmosphere. The room is small and popular, so booking ahead is sensible.</p>
           <a class="review-link" target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d1322162-Reviews-Fink_Stuebel-Strasbourg_Bas_Rhin_Grand_Est.html">Read diner reviews ↗</a>
         </details>
+        
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://www.tripadvisor.com/Restaurant_Review-g187075-d1322162-Reviews-Fink_Stuebel-Strasbourg_Bas_Rhin_Grand_Est.html">Compare recent diner reviews</a>. <a target="_blank" rel="noopener" href="https://restaurant-finkstuebel.com/">See the restaurant or menu source</a>.</p></details>
         <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fink%27Stuebel+Strasbourg">Open in Maps ↗</a>
       </article>
 
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>La Fignette</h3><div class="meta"><span class="pill">★ 4.4/5 · 1,013 Tripadvisor reviews</span><span class="pill">€ · Est. €50–€70 for two</span><span class="pill">Alsatian</span></div><p>A warm, casual room centered on inexpensive Alsatian dishes and tartes flambées.</p><p class="why">Best for: the lowest-cost regional dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Tarte flambée; daily Alsatian dish; local beer or Edelzwicker.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Reviewers praise the authentic flavor, cozy room and wood-fired tartes flambées; service can feel rushed when busy.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Fignette+Strasbourg">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>La Fignette</h3><div class="meta"><span class="pill">★ 4.4/5 · 1,013 Tripadvisor reviews</span><span class="pill">€ · Est. €50–€70 for two</span><span class="pill">Alsatian</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A warm, casual room centered on inexpensive Alsatian dishes and tartes flambées.</p><p class="why">Best for: the lowest-cost regional dinner.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Tarte flambée; daily Alsatian dish; local beer or Edelzwicker.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Reviewers praise the authentic flavor, cozy room and wood-fired tartes flambées; service can feel rushed when busy.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Fignette+Strasbourg">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=La+Fignette+Strasbourg">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Tante Liesel</h3><div class="meta"><span class="pill">★ 4.5/5 · 44 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Traditional Alsatian</span></div><p>A Petite France winstub for spaetzle gratin, waedele, bouchée à la reine, bibeleskäs and choucroute.</p><p class="why">Best for: a broad taste of Alsace at moderate prices.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Alsatian snails; spaetzle-Munster gratin or waedele; Edelzwicker.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>A smaller review sample, but strong feedback on pork shoulder, warmth and traditional character.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Tante+Liesel+Strasbourg">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Tante Liesel</h3><div class="meta"><span class="pill">★ 4.5/5 · 44 Tripadvisor reviews</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Traditional Alsatian</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A Petite France winstub for spaetzle gratin, waedele, bouchée à la reine, bibeleskäs and choucroute.</p><p class="why">Best for: a broad taste of Alsace at moderate prices.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Alsatian snails; spaetzle-Munster gratin or waedele; Edelzwicker.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>A smaller review sample, but strong feedback on pork shoulder, warmth and traditional character.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Tante+Liesel+Strasbourg">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Tante+Liesel+Strasbourg">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Schnockeloch</h3><div class="meta"><span class="pill">★ 8.8/10 · TheFork</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Winstub</span></div><p>A straightforward neighborhood winstub serving generous traditional plates and affordable set menus.</p><p class="why">Best for: hearty portions without tourist-center pricing.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Seasonal starter; choucroute or baeckeoffe; Alsatian beer or Pinot Blanc.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Verified diners praise the hearty Alsatian food and flammekueche; service gets more mixed comments.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Schnockeloch+Strasbourg">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Schnockeloch</h3><div class="meta"><span class="pill">★ 8.8/10 · TheFork</span><span class="pill">€€ · Est. €65–€85 for two</span><span class="pill">Winstub</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A straightforward neighborhood winstub serving generous traditional plates and affordable set menus.</p><p class="why">Best for: hearty portions without tourist-center pricing.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Seasonal starter; choucroute or baeckeoffe; Alsatian beer or Pinot Blanc.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Verified diners praise the hearty Alsatian food and flammekueche; service gets more mixed comments.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Schnockeloch+Strasbourg">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Schnockeloch+Strasbourg">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Les Fines Gueules</h3><div class="meta"><span class="pill">★ 4.7/5 · 533 Tripadvisor reviews</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Regional small plates</span></div><p>A convivial French restaurant built around regional small plates, charcuterie and approachable wines.</p><p class="why">Best for: sharing several local flavors while controlling the bill.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Shared regional plates and charcuterie; seasonal specials; Alsatian wine by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Excellent high-volume feedback for regional flavors, welcoming service and reasonable prices.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Fines+Gueules+Strasbourg">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Les Fines Gueules</h3><div class="meta"><span class="pill">★ 4.7/5 · 533 Tripadvisor reviews</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Regional small plates</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A convivial French restaurant built around regional small plates, charcuterie and approachable wines.</p><p class="why">Best for: sharing several local flavors while controlling the bill.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Shared regional plates and charcuterie; seasonal specials; Alsatian wine by the glass.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Excellent high-volume feedback for regional flavors, welcoming service and reasonable prices.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Fines+Gueules+Strasbourg">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Les+Fines+Gueules+Strasbourg">Open in Maps</a>
       </article>
       <article class="restaurant" data-tags="budget">
-        <div class="rank">Lower-cost pick</div><h3>Le Purgatoire</h3><div class="meta"><span class="pill">★ 4.6/5 · 317 Tripadvisor reviews</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Wine bar · French</span></div><p>A relaxed wine-bar restaurant combining traditional French plates with a more interesting bottle and by-the-glass selection.</p><p class="why">Best for: keeping the food affordable while caring about wine.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Shared charcuterie; seasonal French main; regional wine selected from the list.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Consistently strong feedback for food and wine; a few reviews find service less polished than the cooking.</p></details><a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Le+Purgatoire+Strasbourg">Open in Maps</a>
+        <div class="rank">Lower-cost pick</div><h3>Le Purgatoire</h3><div class="meta"><span class="pill">★ 4.6/5 · 317 Tripadvisor reviews</span><span class="pill">€€ · Est. €70–€95 for two</span><span class="pill">Wine bar · French</span></div>
+        <div class="badge-row"><span class="guide-badge value">● Best value</span></div><p>A relaxed wine-bar restaurant combining traditional French plates with a more interesting bottle and by-the-glass selection.</p><p class="why">Best for: keeping the food affordable while caring about wine.</p><details class="menu-sample"><summary>Sample menu &amp; wine</summary><p>Shared charcuterie; seasonal French main; regional wine selected from the list.</p></details><details class="reviews"><summary>Photos &amp; diner reviews</summary><p>Consistently strong feedback for food and wine; a few reviews find service less polished than the cooking.</p></details>
+        <details class="good-to-know"><summary>Good to know</summary><p>This restaurant meets the normal review standard or offers particularly strong value. Check recent feedback shortly before booking. <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Le+Purgatoire+Strasbourg">Compare recent diner reviews</a>.</p></details>
+        <a class="map" target="_blank" rel="noopener" href="https://maps.google.com/?q=Le+Purgatoire+Strasbourg">Open in Maps</a>
       </article>    </div>
   </div>
 </section>
