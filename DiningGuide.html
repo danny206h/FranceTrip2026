@@ -463,6 +463,12 @@
   let activeTag = null;
   let openId = null;
 
+  function tagsFor(restaurant) {
+    if (Array.isArray(restaurant.tags)) return restaurant.tags;
+    if (typeof restaurant.tags === "string") return restaurant.tags.split(/\s+/).filter(Boolean);
+    return [];
+  }
+
   function parseCard(html) {
     const template = document.createElement("template");
     template.innerHTML = html.trim();
@@ -510,10 +516,11 @@
     if (activeTag === "lunch") return meal === "Lunch" || meal === "Both";
     if (activeTag === "fancy-dinner") {
       const dinnerReady = meal === "Dinner" || meal === "Both";
-      const fancyTags = restaurant.tags.includes("price-high") || restaurant.tags.includes("atmosphere");
+      const tags = tagsFor(restaurant);
+      const fancyTags = tags.includes("price-high") || tags.includes("atmosphere");
       return dinnerReady && fancyTags;
     }
-    return restaurant.tags.includes(activeTag);
+    return tagsFor(restaurant).includes(activeTag);
   }
 
   function filteredRestaurants() {
@@ -529,7 +536,7 @@
         parsed.rating,
         parsed.review,
         parsed.cost,
-        restaurant.tags.join(" "),
+        tagsFor(restaurant).join(" "),
         parsed.text
       ].join(" ").toLowerCase().includes(query);
       return cityMatch && tagMatch && searchMatch;
@@ -555,7 +562,7 @@
         <td class="review-cell">${parsed.review}</td>
         <td class="cost-cell">${parsed.cost}</td>
         <td>${mealPeriod(restaurant, parsed)}</td>
-        <td><div class="tag-list">${restaurant.tags.map(tag => `<span class="tag">${tagLabels[tag] || tag}</span>`).join("")}</div></td>
+        <td><div class="tag-list">${tagsFor(restaurant).map(tag => `<span class="tag">${tagLabels[tag] || tag}</span>`).join("")}</div></td>
         <td><div class="map-actions"><a class="expand-btn" href="RestaurantDetails.html?id=${encodeURIComponent(restaurant.id)}">Details</a><a href="${parsed.mapLink}" target="_blank" rel="noopener">Open Google Map</a></div></td>
       `;
       row.addEventListener("click", event => {
