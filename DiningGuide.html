@@ -440,7 +440,6 @@
   let restaurants = [];
   let activeCity = "all";
   let activeTag = null;
-  let openId = null;
 
   function parseCard(html) {
     const template = document.createElement("template");
@@ -525,7 +524,6 @@
       const row = document.createElement("tr");
       row.className = "restaurant-row";
       row.tabIndex = 0;
-      row.setAttribute("aria-expanded", String(openId === restaurant.id));
       row.innerHTML = `
         <td class="rank-cell">#${restaurant.rank}</td>
         <td class="title-cell">${restaurant.name}<span class="city">${cityNames[restaurant.city]}</span></td>
@@ -535,38 +533,18 @@
         <td class="cost-cell">${parsed.cost}</td>
         <td>${mealPeriod(restaurant, parsed)}</td>
         <td><div class="tag-list">${restaurant.tags.map(tag => `<span class="tag">${tagLabels[tag] || tag}</span>`).join("")}</div></td>
-        <td><div class="map-actions"><button type="button" class="expand-btn">Details</button><a href="${parsed.mapLink}" target="_blank" rel="noopener">Open Google Map</a></div></td>
+        <td><div class="map-actions"><a class="expand-btn" href="DiningGuide_v0.html?id=${encodeURIComponent(restaurant.id)}">Details</a><a href="${parsed.mapLink}" target="_blank" rel="noopener">Open Google Map</a></div></td>
       `;
       row.addEventListener("click", event => {
         if (event.target.closest("a")) return;
-        openId = openId === restaurant.id ? null : restaurant.id;
-        render();
+        window.location.href = "DiningGuide_v0.html?id=" + encodeURIComponent(restaurant.id);
       });
       row.addEventListener("keydown", event => {
         if (event.key !== "Enter" && event.key !== " ") return;
         event.preventDefault();
-        openId = openId === restaurant.id ? null : restaurant.id;
-        render();
+        window.location.href = "DiningGuide_v0.html?id=" + encodeURIComponent(restaurant.id);
       });
-
-      const details = document.createElement("tr");
-      details.className = "details-row";
-      details.hidden = openId !== restaurant.id;
-      details.innerHTML = `
-        <td class="details-cell" colspan="9">
-          <div class="detail-layout">
-            <div class="detail-card">${restaurant.html}</div>
-            <aside class="map-panel">
-              <iframe title="Map preview for ${restaurant.name}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${mapEmbedUrl(parsed.mapLink, restaurant.name)}"></iframe>
-              <div class="map-panel-footer">
-                <span>${parsed.distance}</span>
-                <a href="${parsed.mapLink}" target="_blank" rel="noopener">Open in Google Maps ↗</a>
-              </div>
-            </aside>
-          </div>
-        </td>
-      `;
-      list.append(row, details);
+      list.append(row);
     });
 
     const label = activeCity === "all" ? "All cities" : cityNames[activeCity];
@@ -587,13 +565,11 @@
     } else {
       activeTag = activeTag === button.dataset.tag ? null : button.dataset.tag;
     }
-    openId = null;
     updateButtons();
     render();
   }));
 
   search.addEventListener("input", () => {
-    openId = null;
     render();
   });
 

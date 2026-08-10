@@ -21,6 +21,7 @@
     saintEmilion: "Saint-Émilion",
     strasbourg: "Strasbourg"
   };
+  const detailId = new URLSearchParams(window.location.search).get("id");
   let activeCity = "bordeaux";
   let activeFilter = null;
 
@@ -37,6 +38,36 @@
         if (!section) return;
         section.querySelector(".restaurant-grid").insertAdjacentHTML("beforeend", restaurant.html);
       });
+  }
+
+  function renderDetailPage(restaurants) {
+    const restaurant = restaurants.find(item => item.id === detailId);
+    document.body.classList.add("detail-mode");
+    document.querySelector("header h1").textContent = restaurant ? restaurant.name : "Restaurant Not Found";
+    document.querySelector("header .sub").textContent = restaurant
+      ? (cityNames[restaurant.city] || restaurant.city) + " · Rank #" + restaurant.rank + " · Restaurant details"
+      : "Return to the dining list and choose another restaurant.";
+
+    Object.values(citySections).forEach(section => {
+      section.hidden = true;
+      section.querySelector(".restaurant-grid").innerHTML = "";
+    });
+
+    if (!restaurant) {
+      const section = citySections.bordeaux;
+      section.hidden = false;
+      section.querySelector("h2").textContent = "Restaurant Not Found";
+      section.querySelector("p").textContent = "That restaurant could not be found in the current dining data.";
+      section.querySelector(".restaurant-grid").innerHTML = '<div class="detail-actions"><a class="go-back" href="DiningGuide.html">← Go Back</a></div>';
+      return;
+    }
+
+    const section = citySections[restaurant.city] || citySections.bordeaux;
+    section.hidden = false;
+    section.querySelector(".city-kicker").textContent = "Restaurant detail";
+    section.querySelector("h2").textContent = restaurant.name;
+    section.querySelector("p").textContent = (cityNames[restaurant.city] || restaurant.city) + " · Unified rank #" + restaurant.rank;
+    section.querySelector(".restaurant-grid").innerHTML = '<div class="detail-actions"><a class="go-back" href="DiningGuide.html">← Go Back</a></div>' + restaurant.html;
   }
 
   function render(scrollToCity = false) {
@@ -73,6 +104,10 @@
       const response = await fetch(restaurantDataUrl);
       if (!response.ok) throw new Error("Unable to load restaurant data");
       const restaurants = await response.json();
+      if (detailId) {
+        renderDetailPage(restaurants);
+        return;
+      }
       renderRestaurantCards(restaurants);
       render(false);
     } catch (error) {
