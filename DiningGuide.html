@@ -388,6 +388,8 @@
     <button type="button" class="control-btn" data-tag="traditional">Traditional</button>
     <button type="button" class="control-btn" data-tag="modern">Modern</button>
     <button type="button" class="control-btn" data-tag="atmosphere">Atmosphere</button>
+    <button type="button" class="control-btn" data-tag="lunch">Lunch</button>
+    <button type="button" class="control-btn" data-tag="fancy-dinner">Fancy Dinner</button>
     <p class="status" aria-live="polite">Loading restaurants...</p>
   </section>
 
@@ -431,7 +433,9 @@
     modern: "Modern",
     atmosphere: "Atmosphere",
     "price-low": "$ Moderate",
-    "price-high": "$$"
+    "price-high": "$$",
+    lunch: "Lunch",
+    "fancy-dinner": "Fancy Dinner"
   };
   let restaurants = [];
   let activeCity = "all";
@@ -479,12 +483,24 @@
     return "Both";
   }
 
+  function matchesActiveTag(restaurant, parsed) {
+    if (activeTag === null) return true;
+    const meal = mealPeriod(restaurant, parsed);
+    if (activeTag === "lunch") return meal === "Lunch" || meal === "Both";
+    if (activeTag === "fancy-dinner") {
+      const dinnerReady = meal === "Dinner" || meal === "Both";
+      const fancyTags = restaurant.tags.includes("price-high") || restaurant.tags.includes("atmosphere");
+      return dinnerReady && fancyTags;
+    }
+    return restaurant.tags.includes(activeTag);
+  }
+
   function filteredRestaurants() {
     const query = search.value.trim().toLowerCase();
     return restaurants.filter(restaurant => {
       const parsed = restaurant.parsed;
       const cityMatch = activeCity === "all" || restaurant.city === activeCity;
-      const tagMatch = activeTag === null || restaurant.tags.includes(activeTag);
+      const tagMatch = matchesActiveTag(restaurant, parsed);
       const searchMatch = !query || [
         restaurant.name,
         cityNames[restaurant.city],
