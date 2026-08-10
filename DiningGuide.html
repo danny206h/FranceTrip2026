@@ -556,7 +556,7 @@
         <td class="cost-cell">${parsed.cost}</td>
         <td>${mealPeriod(restaurant, parsed)}</td>
         <td><div class="tag-list">${restaurant.tags.map(tag => `<span class="tag">${tagLabels[tag] || tag}</span>`).join("")}</div></td>
-        <td><div class="map-actions"><a class="expand-btn" href="DiningGuide_v0.html?id=${encodeURIComponent(restaurant.id)}">Details</a><a href="${parsed.mapLink}" target="_blank" rel="noopener">Open Google Map</a></div></td>
+        <td><div class="map-actions"><a class="expand-btn" href="RestaurantDetails.html?id=${encodeURIComponent(restaurant.id)}">Details</a><a href="${parsed.mapLink}" target="_blank" rel="noopener">Open Google Map</a></div></td>
       `;
       row.addEventListener("click", event => {
         if (event.target.closest("a")) return;
@@ -565,12 +565,12 @@
           render();
           return;
         }
-        window.location.href = "DiningGuide_v0.html?id=" + encodeURIComponent(restaurant.id);
+        window.location.href = "RestaurantDetails.html?id=" + encodeURIComponent(restaurant.id);
       });
       row.addEventListener("keydown", event => {
         if (event.key !== "Enter" && event.key !== " ") return;
         event.preventDefault();
-        window.location.href = "DiningGuide_v0.html?id=" + encodeURIComponent(restaurant.id);
+        window.location.href = "RestaurantDetails.html?id=" + encodeURIComponent(restaurant.id);
       });
 
       const details = document.createElement("tr");

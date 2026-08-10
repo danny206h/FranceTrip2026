@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Single restaurant detail page for Danny's France dining guide." />
+  <title>Restaurant Details</title>
+  <style>
+    :root {
+      --ink: #202923;
+      --muted: #68746d;
+      --paper: #f6f1e7;
+      --card: #fffdf8;
+      --line: #d9d0c1;
+      --green: #315c4b;
+      --wine: #8d3f32;
+      --gold: #b98a45;
+      --soft: #ece4d6;
+      --shadow: 0 18px 45px rgba(42, 35, 25, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    header {
+      padding: 34px clamp(18px, 4vw, 42px) 28px;
+      color: #fff;
+      background: #263b32;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 1100px;
+      margin: 0 auto 20px;
+    }
+
+    .nav-link,
+    .go-back {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 6px;
+      color: #fff;
+      font: 700 0.78rem/1 Arial, sans-serif;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 1100px;
+      margin: 0 auto 8px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      max-width: 1100px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+    }
+
+    main {
+      width: min(1100px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 70px;
+    }
+
+    .detail-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .restaurant {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .restaurant::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--green);
+    }
+
+    .rank {
+      margin-bottom: 7px;
+      color: var(--wine);
+      font: 800 0.82rem/1 Arial, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      line-height: 1.18;
+    }
+
+    .restaurant-title { text-decoration: none; }
+    .restaurant-title:hover { color: var(--wine); text-decoration: underline; text-underline-offset: 3px; }
+    .external-mark { font: normal 0.72em Arial, sans-serif; color: var(--wine); }
+    .title-distance { color: var(--muted); font: 700 0.76rem/1 Arial, sans-serif; }
+
+    .meta,
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 13px;
+    }
+
+    .pill,
+    .guide-badge {
+      display: inline-flex;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid #ded2bd;
+      color: #39443d;
+      font: 700 0.76rem/1 Arial, sans-serif;
+    }
+
+    .stars { color: var(--gold); letter-spacing: 0.04em; }
+    .why { color: #404b45; font-style: italic; }
+
+    details {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--wine);
+      font: 700 0.9rem/1 Arial, sans-serif;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    figure { margin: 0; }
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+    }
+
+    figcaption {
+      margin-top: 5px;
+      color: var(--muted);
+      font: 0.76rem/1.35 Arial, sans-serif;
+    }
+
+    .map,
+    .menu-source,
+    .review-link,
+    details a {
+      color: var(--wine);
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      border-bottom: 1px solid var(--wine);
+    }
+
+    .not-found {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topline">
+    <a class="go-back" href="DiningGuide.html">Go Back</a>
+    <a class="nav-link" href="DiningGuide_v0.html">Card Guide</a>
+  </div>
+  <h1>Restaurant Details</h1>
+  <p class="subtitle">Loading restaurant details...</p>
+</header>
+
+<main>
+  <section class="detail-shell" aria-live="polite"></section>
+</main>
+
+<script>
+(() => {
+  const dataUrl = "data/dining/restaurants.json";
+  const cityNames = {
+    bordeaux: "Bordeaux",
+    saintEmilion: "Saint-Émilion",
+    strasbourg: "Strasbourg"
+  };
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const title = document.querySelector("h1");
+  const subtitle = document.querySelector(".subtitle");
+  const shell = document.querySelector(".detail-shell");
+
+  function renderNotFound() {
+    title.textContent = "Restaurant Not Found";
+    subtitle.textContent = "Return to the dining list and choose another restaurant.";
+    shell.innerHTML = '<div class="not-found"><p>That restaurant could not be found in the current dining data.</p><p><a href="DiningGuide.html">Go Back</a></p></div>';
+  }
+
+  fetch(dataUrl)
+    .then(response => {
+      if (!response.ok) throw new Error("Unable to load restaurant data");
+      return response.json();
+    })
+    .then(restaurants => {
+      const restaurant = restaurants.find(item => item.id === id);
+      if (!restaurant) {
+        renderNotFound();
+        return;
+      }
+      title.textContent = restaurant.name;
+      subtitle.textContent = `${cityNames[restaurant.city] || restaurant.city} · Unified rank #${restaurant.rank} · Restaurant details`;
+      document.title = `${restaurant.name} · Restaurant Details`;
+      shell.innerHTML = restaurant.html;
+    })
+    .catch(error => {
+      console.error(error);
+      renderNotFound();
+    });
+})();
+</script>
+</body>
+</html>
